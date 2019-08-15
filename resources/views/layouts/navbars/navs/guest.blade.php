@@ -19,7 +19,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a href="{{ route('home') }}" class="nav-link text-primary">
-                        <i class="tim-icons icon-minimal-left"></i> {{ _('Back to Dashboard') }}
+                        <i class="tim-icons icon-minimal-left"></i> {{ _('Dashboard') }}
                     </a>
                 </li>
                 <li class="nav-item ">
