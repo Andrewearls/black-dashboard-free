@@ -15,10 +15,10 @@
         <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
         <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
         <!-- Icons -->
-        <link href="{{ asset('black') }}/css/nucleo-icons.css" rel="stylesheet" />
+        <link href="{{ asset('black/css/nucleo-icons.css') }}" rel="stylesheet" />
         <!-- CSS -->
-        <link href="{{ asset('black') }}/css/black-dashboard.css" rel="stylesheet" />
-        <link href="{{ asset('black') }}/css/theme.css" rel="stylesheet" />
+        <link href="{{ asset('black/css/black-dashboard.css') }}" rel="stylesheet" />
+        <link href="{{ asset('black/css/theme.css') }}" rel="stylesheet" />
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()
