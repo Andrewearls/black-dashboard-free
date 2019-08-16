@@ -9,16 +9,29 @@
 
         <title>{{ config('app.name', 'Black Dashboard') }}</title>
         <!-- Favicon -->
-        <link rel="apple-touch-icon" sizes="76x76" href="{{ secure_asset('black/img/apple-icon.png') }}">
-        <link rel="icon" type="image/png" href="{{ secure_asset('black/img/favicon.png') }}">
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
-        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-        <!-- Icons -->
-        <link href="{{ secure_asset('black/css/nucleo-icons.css') }}" rel="stylesheet" />
-        <!-- CSS -->
-        <link href="{{ secure_asset('black/css/black-dashboard.css') }}" rel="stylesheet" />
-        <link href="{{ secure_asset('black/css/theme.css') }}" rel="stylesheet" />
+        @if(env('SERVER_TYPE') == 'production')
+            <link rel="apple-touch-icon" sizes="76x76" href="{{ secure_asset('black/img/apple-icon.png') }}">
+            <link rel="icon" type="image/png" href="{{ secure_asset('black/img/favicon.png') }}">
+            <!-- Fonts -->
+            <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+            <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+            <!-- Icons -->
+            <link href="{{ secure_asset('black/css/nucleo-icons.css') }}" rel="stylesheet" />
+            <!-- CSS -->
+            <link href="{{ secure_asset('black/css/black-dashboard.css') }}" rel="stylesheet" />
+            <link href="{{ secure_asset('black/css/theme.css') }}" rel="stylesheet" />
+        @else
+            <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('black/img/apple-icon.png') }}">
+            <link rel="icon" type="image/png" href="{{ asset('black/img/favicon.png') }}">
+            <!-- Fonts -->
+            <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+            <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+            <!-- Icons -->
+            <link href="{{ asset('black/css/nucleo-icons.css') }}" rel="stylesheet" />
+            <!-- CSS -->
+            <link href="{{ asset('black/css/black-dashboard.css') }}" rel="stylesheet" />
+            <link href="{{ asset('black/css/theme.css') }}" rel="stylesheet" />
+        @endif
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()
@@ -90,20 +103,37 @@
                 </ul>
             </div>
         </div>
-        <script src="{{ secure_asset('black') }}/js/core/jquery.min.js"></script>
-        <script src="{{ secure_asset('black') }}/js/core/popper.min.js"></script>
-        <script src="{{ secure_asset('black') }}/js/core/bootstrap.min.js"></script>
-        <script src="{{ secure_asset('black') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-        <!--  Google Maps Plugin    -->
-        <!-- Place this tag in your head or just before your close body tag. -->
-        {{-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> --}}
-        <!-- Chart JS -->
-        {{-- <script src="{{ secure_asset('black') }}/js/plugins/chartjs.min.js"></script> --}}
-        <!--  Notifications Plugin    -->
-        <script src="{{ secure_asset('black') }}/js/plugins/bootstrap-notify.js"></script>
+        @if ( env('SERVER_TYPE') == 'production')
+            <script src="{{ secure_asset('black') }}/js/core/jquery.min.js"></script>
+            <script src="{{ secure_asset('black') }}/js/core/popper.min.js"></script>
+            <script src="{{ secure_asset('black') }}/js/core/bootstrap.min.js"></script>
+            <script src="{{ secure_asset('black') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+            <!--  Google Maps Plugin    -->
+            <!-- Place this tag in your head or just before your close body tag. -->
+            {{-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> --}}
+            <!-- Chart JS -->
+            {{-- <script src="{{ secure_asset('black') }}/js/plugins/chartjs.min.js"></script> --}}
+            <!--  Notifications Plugin    -->
+            <script src="{{ secure_asset('black') }}/js/plugins/bootstrap-notify.js"></script>
 
-        <script src="{{ secure_asset('black') }}/js/black-dashboard.min.js?v=1.0.0"></script>
-        <script src="{{ secure_asset('black') }}/js/theme.js"></script>
+            <script src="{{ secure_asset('black') }}/js/black-dashboard.min.js?v=1.0.0"></script>
+            <script src="{{ secure_asset('black') }}/js/theme.js"></script>
+        @else
+            <script src="{{ asset('black') }}/js/core/jquery.min.js"></script>
+            <script src="{{ asset('black') }}/js/core/popper.min.js"></script>
+            <script src="{{ asset('black') }}/js/core/bootstrap.min.js"></script>
+            <script src="{{ asset('black') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+            <!--  Google Maps Plugin    -->
+            <!-- Place this tag in your head or just before your close body tag. -->
+            {{-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> --}}
+            <!-- Chart JS -->
+            {{-- <script src="{{ asset('black') }}/js/plugins/chartjs.min.js"></script> --}}
+            <!--  Notifications Plugin    -->
+            <script src="{{ asset('black') }}/js/plugins/bootstrap-notify.js"></script>
+
+            <script src="{{ asset('black') }}/js/black-dashboard.min.js?v=1.0.0"></script>
+            <script src="{{ asset('black') }}/js/theme.js"></script>
+        @endif
 
         @stack('js')
 
