@@ -8,8 +8,8 @@ Created using IcoMoon - icomoon.io
 
 @font-face {
   font-family: 'Nucleo';
-  src: url('https://black-dashboard-free.herokuapp.com/black/fonts/nucleo.eot');
-  src: url('https://black-dashboard-free.herokuapp.com/black/fonts/nucleo.eot') format('embedded-opentype'), url('https://black-dashboard-free.herokuapp.com/black/fonts/nucleo.woff2') format('woff2'), url('https://black-dashboard-free.herokuapp.com/black/fonts/nucleo.woff') format('woff'), url('https://black-dashboard-free.herokuapp.com/black/fonts/nucleo.ttf') format('truetype'), url('https://black-dashboard-free.herokuapp.com/black/fonts/nucleo.svg') format('svg');
+  src: url('http://black-dashboard-free.herokuapp.com/black/fonts/nucleo.eot');
+  src: url('http://black-dashboard-free.herokuapp.com/black/fonts/nucleo.eot') format('embedded-opentype'), url('http://black-dashboard-free.herokuapp.com/black/fonts/nucleo.woff2') format('woff2'), url('http://black-dashboard-free.herokuapp.com/black/fonts/nucleo.woff') format('woff'), url('http://black-dashboard-free.herokuapp.com/black/fonts/nucleo.ttf') format('truetype'), url('http://black-dashboard-free.herokuapp.com/black/fonts/nucleo.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
